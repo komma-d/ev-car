@@ -1,0 +1,149 @@
+:root {
+	// lead
+
+	--fs-base: 18px;
+
+	// font family
+
+	--ff-default: inter;
+	--ff-headline: inter;
+	--ff-condensed: inter;
+	--ff-mono: monospace;
+	--ff-fallback: system-ui, -apple-system;
+	--ff-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+	// font sizes
+
+	#{--}fs-xxs: rem(10);
+	#{--}fs-xs: rem(12);
+	#{--}fs-s: rem(14);
+	#{--}fs-m: rem(16);
+	#{--}fs-base: rem(16);
+	#{--}fs-l: rem(18);
+	#{--}fs-xl: rem(24);
+	#{--}fs-xxl: rem(36);
+
+	--fs-h1: calc(var(--fs-base) * 3);
+	--fs-h2: calc(var(--fs-base) * 2.5);
+	--fs-h3: calc(var(--fs-base) * 2);
+	--fs-h4: calc(var(--fs-base) * 1.5);
+	--fs-h5: calc(var(--fs-base) * 1.125);
+	--fs-h6: calc(var(--fs-base) * 1);
+
+	// font weight
+
+	--fw-normal: 400;
+	--fw-bold: 600;
+	--fw-black: 800;
+	--fw-headline: 600;
+
+	// line height
+
+	--lh-base: 1.2;
+	--lh-headline: 1.15;
+
+	// letter spacing
+
+	--ls-base: -0.025em;
+	--ls-headline: -0.025em;
+
+	// colors
+
+	--clr-primary: hsl(56, 100%, 56%);
+	--clr-primary-soft: rgb(255, 240, 31);
+	--clr-secondary: hsl(0, 0%, 7%);
+	--clr-secondary-soft: hsl(0, 0%, 10%);
+	--clr-secondary-light: hsl(0, 0%, 50%);
+	--clr-grey: hsl(0, 0%, 70%);
+	--clr-light: hsl(0, 0%, 95%);
+	--clr-lightest: hsl(0, 0%, 97%);
+	--clr-border: hsl(0, 0%, 90%);
+	--clr-link: hsl(0, 0%, 25%);
+	--clr-link-hover: hsl(0, 0%, 50%);
+	--clr-background: hsl(0, 0%, 96%);
+	--clr-form-input: hsl(0, 0%, 20%);
+	--clr-form-input-border: hsl(0, 0%, 25%);
+
+	// spacer
+
+	#{--}space-xxs: rem(4);
+	#{--}space-xs: rem(8);
+	#{--}space-s: rem(12);
+	#{--}space-m: rem(16);
+	#{--}space-l: rem(20);
+	#{--}space-xl: rem(30);
+	#{--}space-xxl: rem(40);
+	#{--}space-xxxl: rem(60);
+
+	// border
+
+	--border-default: 1px solid var(--clr-border);
+	--border-default-dark: 1px solid var(--clr-secondary);
+	--border-soft: 1px solid rgba(255, 255, 255, 0.1);
+
+	// images ratio
+
+	--ratio-1by1: 100%;
+	--ratio-16by9: calc(9 / 16 * 100%);
+	--ratio-4by3: calc(3 / 4 * 100%);
+
+	// responsive
+
+	--page-width: 1900px;
+	--page-padding: 15px;
+
+	@media (min-width: 576px) {
+		--page-padding: 20px;
+	}
+	@media (min-width: 1024px) {
+	}
+	@media (min-width: 1200px) {
+		--page-padding: 40px;
+	}
+	@media (min-width: 1600px) {
+		--page-padding: 60px;
+	}
+
+	--padding-rule: var(--page-padding);
+
+	@media (min-width: 1900px) {
+		--padding-rule: calc((100vw - var(--page-width)) / 2 + var(--page-padding));
+	}
+
+	// ----- layout ------
+
+	// header
+
+	#{--}header-height: rem(70);
+	#{--}nav-bar-height: rem(42);
+
+	@media (min-width: 1024px) {
+		#{--}header-height: rem(100);
+		#{--}nav-bar-height: rem(50);
+	}
+
+	// listing + product box
+
+	--product-grid: repeat(auto-fill, minmax(170px, 1fr));
+	--product-grid-gap: 10px;
+
+	@media (min-width: 1024px) {
+		--product-grid: repeat(auto-fill, minmax(330px, 1fr));
+		--product-grid-gap: 20px;
+	}
+
+	// ----- misc ------
+
+	--rounded-sm: 2px;
+	--rounded-md: 4px;
+	--rounded-lg: 8px;
+
+	--box-shadow: 0px 1px 2px 0 rgba(0, 0, 0, 0.1);
+	--box-shadow-hover: 0px 10px 20px 0 rgba(0, 0, 0, 0.1);
+
+	--backdrop-color: rgba(0, 0, 0, 0.7);
+
+	--duration: 0.3s;
+
+	--timing: cubic-bezier(0, 0, 0, 1);
+}

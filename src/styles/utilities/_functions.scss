@@ -1,0 +1,13 @@
+// not working here
+
+// @function rem($value) {
+//   $remValue: calc($value / $baseSize) + rem;
+//   @return $remValue;
+// }
+
+@function stripUnit($value) {
+    @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+    @return #{stripUnit($pxValue) / stripUnit($baseSize)}rem;
+}

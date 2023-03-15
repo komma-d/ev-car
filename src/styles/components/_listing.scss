@@ -1,0 +1,49 @@
+.grid {
+	&__stack {
+		display: grid;
+		grid-template-columns: var(--product-grid);
+		column-gap: var(--product-grid-gap);
+		row-gap: calc(var(--product-grid-gap) * 2);
+	}
+	&__card {
+		position: relative;
+		&_figure {
+			padding: var(--space-m);
+		}
+		&_caption {
+			color: var(--clr-secondary);
+			display: block;
+			padding: var(--space-m);
+			text-decoration: none;
+			font-size: var(--fs-l);
+			font-weight: var(--fw-bold);
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: calc(9 / 16 * 100%);
+			}
+		}
+		&_body {
+			padding: var(--space-m);
+			&_data {
+				font-family: var(--ff-mono);
+				font-size: var(--fs-s);
+				border-bottom: var(--border-default);
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: var(--space-xs) 0;
+			}
+		}
+
+		&_footer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 var(--space-m) var(--space-xs);
+		}
+	}
+}

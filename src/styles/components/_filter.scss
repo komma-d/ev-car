@@ -1,0 +1,63 @@
+.filter {
+	position: fixed;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 10px;
+	z-index: 100;
+	background-color: black;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: var(--space-l);
+	padding: var(--space-l);
+	color: white;
+	&__element {
+		&_select {
+			// A reset of styles, including removing the default dropdown arrow
+			appearance: none;
+			// Additional resets for further consistency
+			outline: none;
+			background-color: white;
+			min-width: 200px;
+			font-family: inherit;
+			font-size: inherit;
+			cursor: inherit;
+			line-height: inherit;
+			border: var(--border-default);
+			border-radius: var(--rounded-md);
+			padding: var(--space-xs);
+        	position: relative;
+			box-sizing: border-box;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			&::after {
+				content: "";
+				align-self: end;
+				width: 20px;
+				height: 20px;
+				display: block;
+				background-color: var(--clr-secondary);
+				clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+			}
+			&:hover {
+				border-color: var(--clr-secondary);
+			}
+		}
+        &_label {
+            margin-bottom: var(--space-xs);
+            display: block;
+        }
+		&_checkbox {
+			appearance: none;
+			outline: none;
+			background-color: white;
+			border: 1px solid var(--clr-secondary);
+			border-radius: var(--rounded-md);
+			padding: var(--space-xs);
+			margin: 0 var(--space-s);
+			width: 15px;
+			height: 15px;
+		}
+	}
+}

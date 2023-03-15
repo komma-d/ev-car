@@ -1,0 +1,14 @@
+html {
+	font-size: 16px;
+}
+body {
+	font-family: var(--ff-default), var(--ff-fallback);
+	font-size: var(--fs-base);
+	line-height: var(--lh-base);
+	font-weight: var(--fw-normal);
+	color: var(--clr-secondary);
+	background-color: var(--clr-background);
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}

@@ -1,0 +1,20 @@
+/* styles/globals.css */
+/* @import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities"; */
+
+@import "utilities/_variables";
+@import "utilities/_functions";
+@import "utilities/__root";
+@import "utilities/_helper";
+@import "components/_base";
+@import "components/_nav";
+@import "components/_listing";
+@import "components/_details";
+@import "components/_filter";
+
+/* @import "src/styles/utilities/_functions.scss";
+@import "src/styles/utilities/__root.scss";
+@import "src/styles/utilities/_helper.scss";
+@import "src/styles/components/_base.scss";
+@import "src/styles/components/_listing.scss"; */

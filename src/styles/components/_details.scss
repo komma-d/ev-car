@@ -1,0 +1,31 @@
+.details {
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px;
+	}
+	&__media {
+		&_figure {
+			display: block;
+			margin: 0;
+			margin-bottom: var(--space-l);
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+	&__data {
+		&_block {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 40px;
+			border-bottom: var(--border-default);
+			padding-bottom: var(--space-l);
+			margin-bottom: var(--space-l);
+		}
+		&_caption {
+		}
+		&_content {
+		}
+	}
+}
