@@ -49,9 +49,11 @@
 
 	// colors
 
-	--clr-primary: hsl(56, 100%, 56%);
-	--clr-primary-soft: rgb(255, 240, 31);
+	--clr-primary: hsl(162, 64%, 56%);
+	--clr-primary-hover: hsl(162, 64%, 46%);
+	--clr-primary-soft: hsl(162, 64%, 76%);
 	--clr-secondary: hsl(0, 0%, 7%);
+	--clr-secondary-hover: hsl(0, 0%, 14%);
 	--clr-secondary-soft: hsl(0, 0%, 10%);
 	--clr-secondary-light: hsl(0, 0%, 50%);
 	--clr-grey: hsl(0, 0%, 70%);
@@ -123,14 +125,18 @@
 	}
 
 	// listing + product box
-
-	--product-grid: repeat(auto-fill, minmax(170px, 1fr));
+	--box-width: 170px;
 	--product-grid-gap: 10px;
 
 	@media (min-width: 1024px) {
-		--product-grid: repeat(auto-fill, minmax(330px, 1fr));
+		--box-width: 330px;
 		--product-grid-gap: 20px;
 	}
+
+	--product-grid: repeat(auto-fill, minmax(var(--box-width), 1fr));
+	// compare bar
+
+	#{--}compare-bar-height: rem(120);
 
 	// ----- misc ------
 

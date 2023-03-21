@@ -1,0 +1,53 @@
+.compare-bar {
+	height: var(--compare-bar-height);
+	position: fixed;
+	z-index: 2;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px solid red;
+	padding: 0 rem(15);
+	column-gap: rem(20);
+	&__track {
+		flex: 1 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		column-gap: rem(40);
+		overflow-x: auto;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+	&__car {
+		flex: 0 0 20%;
+		display: flex;
+		column-gap: rem(10);
+		&_img {
+			flex: 0 0 50%;
+			img {
+				border-radius: var(--rounded-md);
+			}
+		}
+		&_caption {
+			flex: 0 0 50%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		&_name {
+		}
+		&_remove {
+			font-size: var(--fs-s);
+		}
+	}
+	&__action {
+	}
+	& ~ .grid {
+		padding-bottom: calc(var(--compare-bar-height) + rem(20));
+	}
+}

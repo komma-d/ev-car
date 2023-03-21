@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-function EvCarList({ evCars }) {
+function EvCarList({ evCars, handleCompareClick }) {
 	return (
 		<div className="grid">
 			<div className="grid__stack">
@@ -43,7 +43,13 @@ function EvCarList({ evCars }) {
 							<svg className="icon">
 								<use xlinkHref="#iconSavings"></use>
 							</svg>
-							<Link className="compare-action" href={`/${evCar.Vehicle_ID}`}>
+							<Link
+								className="compare-action"
+								href="#"
+								onClick={(e) => {
+									e.preventDefault();
+									handleCompareClick(evCar);
+								}}>
 								<svg className="icon">
 									<use xlinkHref="#iconCompare"></use>
 								</svg>

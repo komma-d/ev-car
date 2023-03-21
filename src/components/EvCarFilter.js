@@ -1,42 +1,55 @@
+// EvCarFilter.js
 import React from "react";
+import filterConfig from "../config/FilterConfig";
 
 function EvCarFilter({ brands, filters, handleFilterChange, handleCheckboxChange }) {
+	const updatedFilterConfig = filterConfig.map((filter) => {
+		if (filter.id === "make") {
+			return {
+				...filter,
+				options: [{ value: "", label: "All" }, ...brands.map((brand) => ({ value: brand, label: brand }))],
+			};
+		}
+		return filter;
+	});
+
+	function renderFilterElement(filter) {
+		if (filter.type === "select") {
+			return (
+				<div className="filter__element">
+					<label className="filter__element_label" htmlFor={filter.id}>
+						{filter.label}
+					</label>
+					<select name={filter.id} value={filters[filter.id]} onChange={handleFilterChange} className="filter__element_select">
+						{filter.options.map((option) => (
+							<option key={option.value} value={option.value}>
+								{option.label}
+							</option>
+						))}
+					</select>
+				</div>
+			);
+		}
+
+		if (filter.type === "checkbox") {
+			return (
+				<div className="filter__element flex items-center">
+					<label className="filter__element_label" htmlFor={filter.id}>
+						{filter.label}
+					</label>
+					<input type="checkbox" name={filter.id} checked={filters[filter.id]} onChange={handleCheckboxChange} className="filter__element_checkbox" />
+				</div>
+			);
+		}
+
+		return null;
+	}
+
 	return (
 		<div className="filter">
-			<div className="filter__element">
-				<label className="filter__element_label" for="make">Brand:</label>
-				<select name="make" value={filters.make} onChange={handleFilterChange} className="filter__element_select">
-					<option value="">All</option>
-					{brands.map((brand) => (
-						<option key={brand} value={brand}>
-							{brand}
-						</option>
-					))}
-				</select>
-			</div>
-			<div className="filter__element">
-				<label className="filter__element_label" for="price">Price:</label>
-				<select name="price" value={filters.price} onChange={handleFilterChange} className="filter__element_select">
-					<option value="">All</option>
-					<option value="$">Up to €30,000</option>
-					<option value="$$">€30,001 - €60,000</option>
-					<option value="$$$">Over €60,000</option>
-				</select>
-			</div>
-			<div className="filter__element">
-				<label className="filter__element_label" for="range">Range:</label>
-				<select name="range" value={filters.range} onChange={handleFilterChange} className="filter__element_select">
-					<option value="">All</option>
-					<option value="250">At least 250km</option>
-					<option value="500">At least 500km</option>
-					<option value="750">At least 750km</option>
-					<option value="1000">At least 1000km</option>
-				</select>
-			</div>
-			<div className="filter__element flex items-center">
-				<label className="filter__element_label" for="grant">Umweltbonus:</label>
-				<input type="checkbox" name="grant" checked={filters.grant} onChange={handleCheckboxChange} className="filter__element_checkbox" />
-			</div>
+			{updatedFilterConfig.map((filter) => (
+				<React.Fragment key={filter.id}>{renderFilterElement(filter)}</React.Fragment>
+			))}
 		</div>
 	);
 }

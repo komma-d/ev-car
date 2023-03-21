@@ -1,0 +1,58 @@
+.compare {
+	background-color: white;
+	&__header {
+	}
+	&__stack {
+		overflow-x: auto;
+		max-width: 50vw;
+		//height: 130px;
+	}
+	&__table {
+		width: 100%;
+		text-align: left;
+		border-collapse: collapse;
+		thead {
+			position: sticky;
+			top: 0;
+			background-color: white;
+			z-index: 2;
+			tr {
+				&:first-child {
+					th {
+						padding-top: 0;
+						padding-bottom: 0;
+						border: 0;
+					}
+				}
+				&:last-child {
+					th {
+						border-bottom: var(--border-default);
+					}
+				}
+			}
+		}
+		td,
+		th {
+			padding: rem(20) rem(10);
+			border-bottom: var(--border-default);
+			width: 200px;
+			&[scope="row"] {
+				position: sticky;
+				left: 0;
+				background-color: white;
+				z-index: 1;
+			}
+		}
+		td {
+			text-align: right;
+		}
+		tr {
+			&:last-child {
+				td,
+				th {
+					border: none;
+				}
+			}
+		}
+	}
+}
